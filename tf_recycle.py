@@ -84,11 +84,10 @@ def cnn_model_fn(features, labels, mode):
   return tf.estimator.EstimatorSpec(
       mode=mode, loss=loss, eval_metric_ops=eval_metric_ops)
 
-from google.colab import files
-uploaded = files.upload()
 
 ((train_data, train_labels),
  (eval_data, eval_labels)) = tf.keras.datasets.mnist.load_data()
+# Replace above with trashnet dataset
 
 train_data = train_data/np.float32(255)
 train_labels = train_labels.astype(np.int32)  # not required
